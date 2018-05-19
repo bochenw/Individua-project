@@ -1,0 +1,34 @@
+---
+title: "Viz R5"
+author: "Bochen Wang"
+date: "5/19/2018"
+output: html_document
+---
+
+#ISSUE
+
+## Fundamental, Definitions of Data Deception and Graphic Integrity section
+Link: https://github.com/mschermann/data_viz_reader/blob/master/02-fundamentals.Rmd#definions-of-data-deception-and-graphic-integrity
+
+There are a thousand Hamlets in a thousand people's eyes, and people will have different views about the graph, the content in the graph, the style of the graph, the color of the graph, etc. those sectors could all be some reasons for the reader to misunderstand the data. I disagree with what the author defined “deceptive data graph” in Fundamental, Definitions of Data Deception and Graphic Integrity section. According to the author, deceptive data graph is “a graphical depiction of information, designed with or without an intent to deceive, that may create a belief about the message and its components, which varies from the actual message.” After I read this definition, I feel the reason that deceptive data graph happened is all belongs to the original author, and the author ignored the possibility that sometime it is not “misleading,” it's “misunderstanding.” For readers grow up in different places, with different educational backgrounds, and different purpose of reading the article. It is easy for people to generate different conclusions based on the same graph. 
+
+For example, the following graphs are from the reader. According to the article, it states that: “it is definitely misleading. This is often called improper extraction or tactic omitting data when only a certain chunk of data is included. This is more common in graphs that have time as one of their axes.”
+
+![](https://github.com/mschermann/data_viz_reader/blob/master/images/Bad_graph_extraction.png)
+
+![](https://github.com/mschermann/data_viz_reader/blob/master/images/Good_graph_extraction.png)
+
+The first graph shows the data from 2015-3-9 to 2015-3-13, and the second graph shows the data from 2015-3-2 to 2015-3-21. The author thinks this those two graph is an excellent example of improper extraction or tactic omitting data, however, what if the purpose of the first graph is trying to show the audience that the stabilization between 2015-3-9 and 2015-3-13? Before defining whether this graph is misleading its audience, we need to understand the purpose of the graph. Here is another example: 
+
+![](https://github.com/bochenw/picture/blob/master/homocide%20by%20firearms.png)
+
+![](https://github.com/bochenw/picture/blob/master/Gun%20Death%20World%20Map.png)
+ 
+The purpose of the first graph is to prove that the US is an outlier on gun violence because it has way more guns than other developed nations. The author compared the United States with other countries about homicide by firearms per 1 million people, and the result shows that the United States has way more murders by firearms than other countries.
+
+This second chart represents the homicide by firearm per 1 million people for different countries all over the world. When the rate goes higher, the country color becomes redder. From this chart, we can easily observe that the US stay in the safe “yellow” realm.
+
+The above two graphs were generated from a different perspective. We cannot readily conclude that the US is a safe country or not. Compare with other developed countries, US has a higher rate, but compare with all other countries in the world, and the US is well below the world’s average rate. If we just solely picked one graph and reached a conclusion whether or not the US is a safe country, however, when another graph shows, we may alter our conclusion. Under this particular circumstance, we cannot define which graph is a “deceptive graph.”
+
+“Data visualization deception” is a heavy word, because once I discover one deceptive graph from the article, I will have a conclusion that this author is trying to hide something or to mislead me by breaking the Graphic Integrity. This could lead me to reach an opposite conclusion to the article. I think the best way to detect visualization deception is before making any conclusion, understand very details and information the graph provided, legend, caption, numbers, etc. 
+
