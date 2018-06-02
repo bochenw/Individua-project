@@ -6,6 +6,9 @@ output: html_document
 ---
 
 
+## Data Wrangling
+
+[Jupyter Link](https://github.com/bochenw/Individua-project/blob/master/Revised%20Individual%20Project%20Data%20Cleaning%20Process.ipynb)
 
 # First Version revised
 
