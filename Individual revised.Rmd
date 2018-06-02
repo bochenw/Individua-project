@@ -1,0 +1,180 @@
+---
+title: "Individual Revised Version"
+author: "Bochen Wang"
+date: "6/2/2018"
+output: html_document
+---
+
+
+
+# First Version revised
+
+### 1.Mass shooting statistics with US States gun laws map.
+
+The original graph described that there had been more than 1,600 mass shootings since Sandy Hook. From the Article, the author mentioned that economist Richard Florida took a look at gun deaths and other social indicators, and he found that higher populations, more stress, more immigrants, and more mental illness didn’t correlate with more gun deaths. However, he didn’t include those indicators in the graph, and there’s no way to prove it.
+
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-12%20at%2012.04.02%20AM.png)
+
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-12%20at%2012.02.52%20AM.png)
+
+#### First redesigned version:
+
+The original graph only shows the mass shooting happened after Sandy Hook; I used the data from Gun Violence Archive that including all the mass shooting occurred in the United States from 2014 – 2018. I added time series factor into the graph trying to prove that mass shooting does not happen just at one time, it is highly correlated with the geographic factor, and I also added US States population statistics into to the map. From the final graph, I can interpret that state population has correlation with mass shooting incidents.
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%2011.53.32%20AM.png)
+ 
+I redesigned the graph, kept all other states plain and only highlight the states that have at least one-gun control laws. In this way, the reader can compare this graph with the previous graph. Finally, I used line plot and added trend line among those states; it shows that for those states that have at least one-gun control law, most states have a decreasing trend for mass shooting incidents. It indicates that gun-control laws have a positive impact to decrease mass shooting incidents, but not significantly.
+ 
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%2011.53.38%20AM.png)
+![](https://github.com/bochenw/picture/blob/master/Mass%20shooting%20happened%20from%202014-2018.png)
+
+#### Revised Version:
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-01%20at%206.01.00%20PM.png)
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-01%20at%206.04.48%20PM.png)
+
+From the first version, the red circles in the graph show the number of people hurt form mass shooting since 2014, the difference in size of the red circle represents the difference in the number of people gets hurt. In the revised version, I moved years pages, and aggregated number of people hurt since 2014 and use the different color in the map represents the differences of the number of people hurt in each state, there are reasons:
+
+  • The different size of the red dots is not very obvious
+  • The primary purpose of the graph is trying to show the difference between gun control law strength in each state and the number of people get hurt in that state, so aggregate numbers to state level will better show the result.
+  • The original graph does not include the population factor, so I used tableau inside data and generated another map graph, we can easily observe that there is a strong correlation between the number of people get hurt and the population in that state. 
+
+From the first version, I tried to explain the difference between the state that has at least one gun control law and other states. I used line plot and added trend line among those states; it shows that for those states that have at least one gun control law, most states have a decreasing trend for mass shooting incidents. It indicates that gun-control laws have a positive impact to decrease mass shooting incidents, but not significantly.
+
+For Revised version, I found the primary purpose is to show the impact of gun control law. I made two graphs: the first one includes the states that have at least one gun control laws, and the second one includes states that have no gun control laws. For those two graphs, I aggregated the number of people wounded together and added trend line and forecast indicator into the graph to provide readers with a more clearly information to conclude.  
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%201.18.29%20AM.png)
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%201.20.25%20AM.png)
+ 
+From above two graphs, we can observe that the although some states have at least one gun control law, their number of people get wounded is increasing over the year. For those states have no gun control laws, the number of people wounded is decreasing over the year. My conclusion at this point is: Gun-control laws conceptually have an impact on decreasing mass shooting incidents, but we need to consider more factors. At this point, only compare mass shooting incidents with gun control laws cannot conclude that gun-control laws have a positive impact on decreasing mass shooting incidents.
+
+
+### 2.Compared with other developed countries, The United States has the highest homicides by firearm rate per 1 million people
+
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-12%20at%2012.04.22%20AM.png)
+
+The purpose of this graph is to prove that the US is an outlier on gun violence because it has way more guns than other developed nations. The author compared the United States with other developed countries about homicide by firearms per 1 million people, and the result surprising shows that the United States has way higher homicide by firearms than other countries.
+
+The original graph looks pretty and used different numbers of people’s figure to illustrate the difference between the United States and other developed countries. The reason for me to redesign this graph is because the original diagram is very long vertically, and I have to scroll up and down several times to view the whole image and to build a complete understanding of all the information included in the graph.
+ 
+![](https://github.com/bochenw/picture/blob/master/homocide%20by%20firearms.png)
+https://public.tableau.com/profile/bochen.wang#!/vizhome/HomocideByFirearmsPer1Mpeople/Dashboard1?publish=yes
+
+I redesign the figure, used packed bubbles tool to reach the goal. The size of the bubbles indicates the homicide by firearms per 1 million people, the bigger the bubble, the higher the rate. From the new graph, readers will have an apparent understanding of all the information included in the graph, and the bubble size of United States is significantly larger than other countries. It is consistent with the author’s primary purpose that he was trying to prove that the US is an outlier on gun violence because it has way more guns than other developed nations.
+
+#### Revised Version:
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%201.45.22%20AM.png)
+Based on my first version, I tried several ways and different graph style trying to compare the differences in homicide by firearm rate per 1 million people between the United States and other developed countries, by using some concepts during class time, the bubble graph is so far the best graph that reader can easily observe the rate differences between the United States and other developed countries, and also the exact rate number. I updated the graph with caption and provided more details about the color and the size of the bubble in the graph.
+
+The data are generated by UNDOC, Small Arms Survey, collected by Simon Rogers for the Guardian. Source:https://docs.google.com/spreadsheets/d/1chqUZHuY6cXYrRYkuE0uwXisGaYvr7durZHJhpLGycs/edit#gid=0
+
+### 3.Gun Death Rate Vs. Gun Law Strength
+
+Gun Ownership rate by state is a good indicator of the gun law strength for that state; the more restrict the law is, the fewer people own guns in that state. The first image is the original graph used in the article that shows the relationship between Gun Ownership Vs. Gun Deaths. I searched online and found the data generated by Gifford’s Law Center that including gun law strength, gun death rate, gun death ranking, etc. for all 50 U.S. States.
+
+I used those data and redesigned the original graph in a better way to prove that gun-related death rate is highly correlated with local state gun control laws, and if the local government want to decrease the gun-related death rate, enforce gun control laws is an effective way to reach the goal.
+
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-12%20at%2012.03.51%20AM.png)
+![](https://github.com/bochenw/picture/blob/master/2017%20Gun%20Death%20Rate%20Vs%20Gun%20Law%20Strength.png)
+https://public.tableau.com/profile/bochen.wang#!/vizhome/2017GunDeathRateVsGunLawStrength/Dashboard5?publish=yes
+ 
+The gun laws strength measured by six aspects: Background Checks, Child Access Prevention, Concealed Carry Permitting, Domestic Violence, Extreme Risk Protection Order and Military-style Weaponry. For example, Massachusetts ranked the 4th among 50 states that have the most restrictive gun laws, and it has the lowest gun death rate.
+
+I put Gun Death Rate on X-axis and Gun Law Strength Ranking on Y-axis, different color in the plot shows the detailed about the laws strength grades rated by Gifford’s Law Center. From the new graph, the reader can easily observe that when specific State has weak gun law strength, it often results in higher gun death rate. I can easily interpret from the graph that if the local government wants to decrease the gun-related death rate, enforce gun control laws is an effective way to reach the goal.
+
+#### Revised:
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%202.00.45%20AM.png)
+
+For revised version, I tried using other graph style and other data source trying to show the correlation between gun death rate and gun law strength. So far this is the best graph from my view because it included all information we need to conclude. Based on the first version, I kept X and Y axis and the color detail about the laws strength grades rate and added the trending line to the graph. From the trending line, we can observe that gun death rate and gun law strength rank have a positive correlation. The higher the gun death rate, the higher the gun law strength rank. All states that rated F, the state that has grey color in the graph, they all have a relatively high Gun death rate and gun law strength rank.
+ 
+
+# Deceptive Version:
+
+### 1. American’s Gun related Homicides rates is well below the world’s average.
+
+The purpose of this graph is to prove that the US is an outlier on gun violence because it has way more guns than other developed nations. The author compared the United States with other countries about homicide by firearms per 1 million people, and the result shows that the United States has way more murders by firearms than other countries.
+
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-12%20at%2012.04.22%20AM.png)
+ 
+However, the author only picked couple countries with low homicide by firearms per 1 million people rate, and this action intentionally made the US prominent. After I include other nations in the analysis, the following graph tells me another story.
+
+![](https://github.com/bochenw/picture/blob/master/Gun%20Death%20World%20Map.png)
+Source:https://public.tableau.com/profile/bochen.wang#!/vizhome/WorldMapforHomocideByFirearmsPer1Mpeople/Dashboard1
+
+This chart represents the homicide by firearm per 1 million people for different countries all over the world. When the rate goes higher, the country color becomes redder. From this chart, we can easily observe that most countries stay in the “yellow” realm, the most dangerous areas are Middle American, South American, Mexico and South Africa.
+
+According to UNODC, Small Arms Survey, via The Guardian. America has 4.4 percent of the world’s population and almost half of the civilian-owned guns around the world. With this massive number of firearms owned by the citizen, US still keep their homicide by firearm per 1 million people rate in a relatively low range, well below the world’s average.
+
+During revise process, I tried using other graph styles to show the worldwide homicide by firearms per 1 million people rate, and I believe the world map is so far the best one, I have the following reasons:
+  1, World map includes all countries in the world, compares to other graph styles, it keeps the graph in a relatively small place.
+  2, the color range on the map could quickly show the differences in homicide by firearm rate among all countries.
+  3, world map could also show the geographic correlation factor
+
+### 2. More Guns does NOT lead to More homicide.
+
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-18%20at%2011.26.55%20PM.png)
+ 
+The purpose of the original graph is to prove that more guns lead to more gun-related death. The author compared the United States with other countries, and the result shows that the United States has way higher numbers on both X-axis and Y-axis. The trending line looks convincing and its natural for the reader to conclude that more guns lead to more gun-related death. However, the author intentionally picked couple countries, after I include all the nations, the conclusion has changed.
+
+![](https://github.com/bochenw/picture/blob/master/Gun%20Number%20vs%20Death.png)
+Source:https://public.tableau.com/profile/bochen.wang#!/vizhome/GunNumbervs_GunRelatedDeaths/Dashboard2
+
+From the graph above, we can observe that although the US has the highest rate for guns owned per 100 people, it’s gun-related death rate per 100,000 people is very low. I also added a trending line to the graph, and we can see that the slope of the line is negative, it means more guns owned by people can decrease the firearm-related deaths.
+
+It’s simple to understand, the purpose of people having guns is not trying to hurt others, this is an effective way to protect themselves from bad people. People looking for tools to protect themselves of all time, and the gun is a powerful tool for people to defend themselves from others. From the evidence provided by the graph, the conclusion is more guns owned by people does not lead to more gun-related deaths.
+
+During the revised process, I found from my graph, there is lots number of countries in the gray circle, and we cannot see their country name. Also, I cannot check the particular rate for a specific country. The primary purpose of the graph is trying to show the correlation between the number of civilian-owned guns and gun-related death. Based on the original data, I download the date from world bank about countries population, and I created a new variable called: number of people killed by 1 civilian-owned guns.
+
+The calculation is simple to understand:
+
+([Homicide by firearm rate per 100,000 population] * ([Population]/100,000)) 
+/ ([Average firearms per 100 people] * ([population]/100))
+
+From the above calculation, the result will show that how many were killed by one civilian-owned gun every year. Although the United States has a huge number of civilian-owned guns, the rate is meager about 0.000003.  
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%2012.47.46%20PM.png)
+
+The data are generated by Zara Matheson/Martin Prosperity Institute; Source: http://lawcenter.giffords.org/scorecard/#CA
+
+### 3. Tighter gun control laws DOES NOT lead to fewer gun related deaths
+
+The author used gun ownership rate by state as an indicator of the gun law strength for that state; the more restrict the law is, the fewer people own guns in that state. The original graph shows the relationship between Gun Ownership Vs. Gun Deaths.
+ 
+![](https://github.com/bochenw/picture/blob/master/Screen%20Shot%202018-05-12%20at%2012.03.51%20AM.png)
+
+Use gun ownership as an indicator of the gun law strength at that state sounds convincing: the more restrict the law is, the fewer people own guns in that state. I found data and ranking numbers generated by Gifford’s Law Center, aggregate this dataset with previous gun deaths dataset and include this factor in analysis instead of gun ownership percentage. The following graph surprisingly shows that gun laws strength is unrelated to gun-related deaths.
+
+![](https://github.com/bochenw/picture/blob/master/Gun%20Death%20Rate%20per%201m.png)
+Source: https://public.tableau.com/profile/bochen.wang#!/vizhome/GunDeathRatePer1millionpeoplefrom2014-2017/Dashboard6
+
+From the above graph, I put state name on X-axis, and sorted state from left to right based on gun laws strength from A to F. The gun laws strength measured by six aspects: Background Checks, Child Access Prevention, Concealed Carry Permitting, Domestic Violence, Extreme Risk Protection Order and Military-style Weaponry. If tighter gun laws control leads to fewer gun-related deaths, we can have expected that plots on the graph will have an increasing trend. However, from the figure above, we cannot observe any pattern.
+
+Also, different dots from the same state represent the deaths number from 2014 - 2017, we can find that although some state like California or Illinois has very restrictive gun control laws, their gun deaths number does not have a decreasing trend and still changing in a broad range. According to above analysis, we can conclude that state gun control strength is unrelated to gun related deaths at that state, the government should focus on other possible reasons, like education level, poverty rate, unemployment rate, etc.
+
+![](https://github.com/bochenw/pictures1/blob/master/Screen%20Shot%202018-06-02%20at%2011.50.59%20AM.png)
+ 
+During the revised process, I found my graph is hard to interpret from the first glance; readers may have confused about what do those ‘A’,’B’,’C’ letters mean. Also, pick the particular state to represent the grade does not look convincing. So, for the revised version, I aggregate grade rating data together and put it to X-axis. On Y-axis, it is the number of total gun-related incident people get wounded. I also added year pages, moving trails and history marks into the graph, it will give the reader more information from the graph. From my observation, although gun control grade is different, but a higher-grade state does not show smaller number of people get wounded, then I can conclude that that state gun control strength is unrelated to gun related deaths at that state, the government should focus on other possible reasons, like education level, poverty rate, unemployment rate, etc.
+
+The data and ranking number are generated by Gifford’s Law Center; an organization dedicates to prevent gun violence. Source: http://lawcenter.giffords.org/scorecard/#CA
+
+# Critique for first version and class concept for revised version:
+
+### Chart type
+Charts are individual visual representations of data. There are many ways of representing your data, using different marks, shapes and layouts.  For my first version, some of the chart are not the best for
+
+### Data
+For my revised version, compared with previous version, I downloaded more related dataset and connect it with current one. Also, I added more calculation variables into the dataset. I found sometimes the dataset does contains the information we need, but the data requires some work to generate. 
+
+### Provide Content
+One of the main purposes of Data Visualization is storytelling, to lead the reader to understand the what along with the why visually. For my first version, I found sometime I forget add captions into the graph, then the reader may be confused about the information presented in the graph. 
+
+### Do Calculations
+For one graph I was trying to show the difference between states that have gun control law and the states they don’t. I didn’t do the calculation and separate the states from my first version, and later I found it is hard for reader to conclude the difference. Then for my revised version, I separate those states into two graphs and added trending line and forecast line, it became more clearing for readers. 
+
+### Accurate Scaling
+Represent the data accurately in proportion to the scale. The size of the chart or symbol should be proportional to the data point being represented.
+
+### Think as author / reader
+When I trying to design the graph, I’m the author, then I should sometime stay at the reader side, to check whether my graph is make sense or is there any misleading happening? When I’m doing my deceptive version, as the reader, sometimes we should stay at the author side, we need to detect is there any visualization deception in the graph, before making any conclusion, understand very details and information the graph provided, legend, caption, numbers, etc. 
