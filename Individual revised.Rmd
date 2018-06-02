@@ -40,8 +40,10 @@ I redesigned the graph, kept all other states plain and only highlight the state
 From the first version, the red circles in the graph show the number of people hurt form mass shooting since 2014, the difference in size of the red circle represents the difference in the number of people gets hurt. In the revised version, I moved years pages, and aggregated number of people hurt since 2014 and use the different color in the map represents the differences of the number of people hurt in each state, there are reasons:
 
 1,The different size of the red dots is not very obvious
+
 2,The primary purpose of the graph is trying to show the difference between gun control law strength in each state and the number of people get hurt in that state, so aggregate numbers to state level will better show the result.
-3m,The original graph does not include the population factor, so I used tableau inside data and generated another map graph, we can easily observe that there is a strong correlation between the number of people get hurt and the population in that state. 
+
+3,The original graph does not include the population factor, so I used tableau inside data and generated another map graph, we can easily observe that there is a strong correlation between the number of people get hurt and the population in that state. 
 
 From the first version, I tried to explain the difference between the state that has at least one gun control law and other states. I used line plot and added trend line among those states; it shows that for those states that have at least one gun control law, most states have a decreasing trend for mass shooting incidents. It indicates that gun-control laws have a positive impact to decrease mass shooting incidents, but not significantly.
 
@@ -117,8 +119,11 @@ This chart represents the homicide by firearm per 1 million people for different
 According to UNODC, Small Arms Survey, via The Guardian. America has 4.4 percent of the world’s population and almost half of the civilian-owned guns around the world. With this massive number of firearms owned by the citizen, US still keep their homicide by firearm per 1 million people rate in a relatively low range, well below the world’s average.
 
 During revise process, I tried using other graph styles to show the worldwide homicide by firearms per 1 million people rate, and I believe the world map is so far the best one, I have the following reasons:
+
   1, World map includes all countries in the world, compares to other graph styles, it keeps the graph in a relatively small place.
+  
   2, the color range on the map could quickly show the differences in homicide by firearm rate among all countries.
+  
   3, world map could also show the geographic correlation factor
 
 ### 2. More Guns does NOT lead to More homicide.
