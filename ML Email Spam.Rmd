@@ -1,0 +1,88 @@
+---
+title: "ML Email spam"
+author: "Bochen Wang"
+date: "5/16/2018"
+output: html_document
+---
+
+```{r}
+setwd("~/Downloads/spam_data")
+train = read.csv('train.csv',header = FALSE)
+summary(train)
+trainLabel = read.csv('trainLabel.csv', colClasses='factor', numerals = "no.loss", header = FALSE)
+summary(trainLabel)
+```
+
+```{r}
+library(e1071)
+svm = svm(train,trainLabel, type = 'C-classification')
+summary(svm)
+typeof(trainLabel)
+summary(trainLabel)
+```
+
+```{r}
+setwd("~/Downloads/spam_data")
+test = read.csv('test.csv',header = FALSE)
+testLabel = read.csv('testLabel.csv',colClasses='factor', numerals = "no.loss",header = FALSE)
+```
+
+```{r}
+
+y_pred = predict(svm,train)
+y_pred
+out = table(y_pred,t(trainLabel))
+out
+chisq.test(out)
+summary(trainLabel)
+```
+```{r}
+library(lattice)
+library(ggplot2)
+library(caret)
+confusionMatrix(out)
+```
+
+```{r}
+y_test = predict(svm,test)
+y_test
+out1 = table(y_test,t(testLabel))
+out1
+chisq.test(out1)
+```
+
+```{r}
+confusionMatrix(out1)
+```
+```{r}
+confusionMatrix(out)
+```
+
+
+library(naivebayes)
+trainLabel
+bayes = naiveBayes(train,trainLabel, type = 'C-classification')
+y_pred = predict(bayes,train, type = 'raw')
+out2 = table(y_pred, t(trainLabel))
+length(y_pred)
+length(t(trainLabel))
+out2
+chisq.test(out2)
+
+svm = svm(train,trainLabel, type = 'C-classification')
+summary(svm)
+typeof(trainLabel)
+summary(trainLabel)
+
+y_test = predict(svm,test)
+out1 = table(y_test,t(testLabel))
+out1
+chisq.test(out1)
+
+yf = factor(y)
+model5 = svm(x,yf)
+summary(model5)
+y_pred = predict(model5,x)
+out = table(y_pred,yf)
+out
+chisq.test(out)
