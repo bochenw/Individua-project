@@ -1,0 +1,231 @@
+
+## read file
+```{r}
+setwd("~/Desktop/DSTMAA_data")
+bible=readLines("ascii_bible2.txt")
+bible[bible==""]<-NA
+bible = na.omit(bible)
+bible = bible[-c(1)]
+head(bible,20)
+```
+## count for verses 
+
+```{r}
+print(length(bible))  #31,166 verses
+```
+
+## check chapters
+```{r}
+chap = grep("[0-9][0-9][0-9]:001",bible)
+length(chap)   # 1189 chapters
+```
+
+## Extract an array for the verse numbers & verse text.
+
+```{r}
+library(stringr)
+VerseNumber = substring(bible,1,7)
+Text = substring(bible, 9)
+
+VerseNumber
+Text
+```
+
+
+## Lower case all text.
+
+```{r}
+LowerText = tolower(Text)
+LowerText
+```
+
+## Convert the text of all verses into a Corpus
+```{r}
+library(tm)
+text_corpus = Corpus(VectorSource(LowerText))
+writeCorpus(text_corpus)
+inspect(text_corpus)
+```
+## Remove all punctuation. Use a corpus function, check for how many unique words in the bible
+
+```{r}
+temp = text_corpus
+NoPunc = tm_map(temp,removePunctuation)
+ver_uniq = DocumentTermMatrix(NoPunc)
+ver_uniq     #12,651 unique words
+```
+
+## Remove all stopwords. Check how many unique terms in bible 
+
+```{r}
+temp = NoPunc
+NoStop = tm_map(temp,removeWords,stopwords("english"))
+ver_uniq = DocumentTermMatrix(NoStop)
+ver_uniq   #12,555 Unique terms
+```
+
+## Stem the text, to remove multiplicity of similar words of the same root. 
+```{r}
+temp = NoStop
+Stem = tm_map(temp, stemDocument)
+ver_uniq = DocumentTermMatrix(Stem)
+ver_uniq  #9,125 Unique terms
+```
+## Check for distinct words in the bible after stemming?
+```{r}
+ver_tdm = DocumentTermMatrix(Stem)
+ver_tdm   #9,125 distinct words
+```
+## Convert the TDM into a matrix and find the 50 most common words in the bible. 
+```{r}
+spr_rmv = removeSparseTerms(ver_tdm,0.99) 
+ver_mat = as.matrix(spr_rmv)
+cm_words = sort(colSums(ver_mat), decreasing = TRUE)
+head(cm_words, 50)
+```
+## Make a wordcloud of the top 100 words in the bible. 
+
+```{r}
+library(RColorBrewer)
+library(wordcloud)
+WordCloud = head(cm_words,100) 
+Names = names(WordCloud) #names of top 100 words
+wordcloud(Names,WordCloud) #creating word cloud
+```
+
+## Mood score the original text of the bible
+
+```{r}
+setwd("~/Desktop/")
+HIDict = readLines("DSTMAA_data/inqdict.txt")
+dict_pos = HIDict[grep("Pos",HIDict)]
+poswords = NULL
+for (s in dict_pos) {
+	s = strsplit(s,"#")[[1]][1]
+	poswords = c(poswords,strsplit(s," ")[[1]][1])
+}
+dict_neg = HIDict[grep("Neg",HIDict)]
+negwords = NULL
+for (s in dict_neg) {
+	s = strsplit(s,"#")[[1]][1]
+	negwords = c(negwords,strsplit(s," ")[[1]][1])
+}
+poswords = tolower(poswords)
+negwords = tolower(negwords)
+print(sample(poswords,25))
+print(sample(negwords,25))
+poswords = unique(poswords)
+negwords = unique(negwords)
+print(length(poswords))
+print(length(negwords))
+library(tm)
+library(stringr)
+ver_txt = str_split_fixed(bible, "[0-9][0-9][0-9]:[0-9][0-9][0-9] ",2)
+ver_txt = ver_txt[,2] 
+ver_txt = Corpus(VectorSource(ver_txt))
+ver_txt = tm_map(ver_txt,removePunctuation)
+v1 = data.frame(text = sapply(ver_txt, as.character), stringsAsFactors = FALSE)
+v1 = str_replace(v1$text,"^\\s+","") 
+v1 = trimws(v1,which = "right") 
+v1 = str_to_lower(v1) 
+ver_txt1 = unlist(strsplit(v1," ")) 
+posmatch = match(ver_txt1,poswords)
+numposmatch = length(posmatch[which(posmatch>0)])
+negmatch = match(ver_txt1,negwords)
+numnegmatch = length(negmatch[which(negmatch>0)])
+print(numposmatch)
+print(numnegmatch)   #  56,825 positive words,  38,769 negative words
+```
+
+## Summarize the bible into less than 500 verses
+```{r}
+a = c(2,2)
+b = c(2,2)
+x = data.frame(a,b)
+y = data.frame(a,b)
+z = data.frame(a,b)
+column_names = c("Pos_Score","Verse")
+x = `colnames<-`(x,column_names)
+counter = 1
+for(verse in v1){
+  ver_txt1 = unlist(strsplit(verse," "))
+  posmatch = match(ver_txt1,poswords)
+  numposmatch = length(posmatch[which(posmatch>0)])
+  if(numposmatch > 5){ #taking only those verses which have positive mood score > 5
+    x[counter,1] = numposmatch
+    x[counter,2] = verse
+    counter = counter + 1
+  }
+}
+
+sum_txt = x$Verse
+
+text_summary = function(text, n) {
+  m = length(text)  
+  jaccard = matrix(0,m,m)
+  for (i in 1:m) {
+    for (j in i:m) {
+      a = text[i]; aa = unlist(strsplit(a," "))
+      b = text[j]; bb = unlist(strsplit(b," "))
+      jaccard[i,j] = length(intersect(aa,bb))/
+                          length(union(aa,bb))
+      jaccard[j,i] = jaccard[i,j]
+    }
+  }
+  similarity_score = rowSums(jaccard)
+  res = sort(similarity_score, index.return=TRUE,
+          decreasing=TRUE)
+  idx = res$ix[1:n]
+  summary = text[idx]
+}
+
+res = text_summary(sum_txt,500)
+res
+```
+```{r}
+a = c(2,2)
+b = c(2,2)
+x = data.frame(a,b)
+y = data.frame(a,b)
+z = data.frame(a,b)
+column_names = c("Verse")
+x = `colnames<-`(x,column_names)
+counter = 1
+for(verse in v1){
+  ver_txt1 = unlist(strsplit(verse," "))
+  posmatch = match(ver_txt1,poswords)
+  numposmatch = length(posmatch[which(posmatch>0)])
+  negmatch = match(ver_txt1,negwords)
+  numnegmatch = length(negmatch[which(negmatch>0)])
+  if(numposmatch > 5 | numnegmatch > 5){ 
+    x[counter,1] = verse
+    counter = counter + 1
+  }
+}
+sum_txt = x$Verse
+
+res = text_summary(sum_txt,500)
+head(res)
+
+```
+
+
+## Find the main 3 topics in the bible, and the top 25 words in each topic.
+```{r}
+library(topicmodels)
+k=3
+```
+
+```{r}
+res <-LDA(ver_uniq, k, method="Gibbs")    # Use this for Q15
+res.terms = as.matrix(terms(res,25))
+print(res.terms)
+```
+
+```{r}
+b_corpus = Corpus(VectorSource(bible))
+Tmd=DocumentTermMatrix(b_corpus)
+res1 <-LDA(Tmd, k, method="Gibbs")
+res1.terms = as.matrix(terms(res1,25))
+print(res1.terms)
+```
